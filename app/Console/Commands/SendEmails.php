@@ -11,14 +11,14 @@ class SendEmails extends Command
      *
      * @var string
      */
-    protected $signature = 'command:name';
+    protected $signature = 'echo:date';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = '输出日期和时间';
 
     /**
      * Create a new command instance.
@@ -38,5 +38,7 @@ class SendEmails extends Command
     public function handle()
     {
         //
+        $time = date("Y-m-d H:i:s\n");
+        file_put_contents('/wwwroot/oop/new_special/public/error/date.log',$time,FILE_APPEND);
     }
 }

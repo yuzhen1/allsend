@@ -14,4 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/token',"WeixinController/get_token");
+Route::post('/weixin/valid','WeixinController@wxEvent');//接收消息推送
+Route::get('weixin/valid','WeixinController@valid');
+Route::get('/token','WeixinController@get_token');//获取access_token
